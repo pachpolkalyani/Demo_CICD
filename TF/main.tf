@@ -14,7 +14,6 @@ terraform {
         storage_account_name = "strvdevdemo"
         container_name = "devdemo"
         key = "mainfile1.tfstate"
-      
     }
 }
 
