@@ -31,7 +31,7 @@ resource "azurerm_storage_account" "STG" {
  }
 
 module Modules {
-  Source = "Modules"
+  Source = ""./TF/modules"
   name = var.var_Storage_name
    resource_group_name = var.var_RG_name
    location = var.var_location
