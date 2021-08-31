@@ -30,13 +30,10 @@ resource "azurerm_storage_account" "STG" {
    account_replication_type = var.var_account_replication_type
  }
 
-module Modules {
-  Source = "./TF/Modules"
-  name = var.var_Storage_name
-   resource_group_name = var.var_RG_name
-   location = var.var_location
-   account_tier = var.var_account_tier
-   account_replication_type = var.var_account_replication_type
-  }
+resource "azurerm_storage_container" "adf_storage_source_01" {
+  name                  = "adfstoragesource01"
+  storage_account_name  = azurerm_storage_account.STG.name
+  container_access_type = "public"
+}
   
 
